@@ -1,5 +1,5 @@
 //
-//  RadarAnimationView.swift
+//  BeaconAnimationView.swift
 //  SwiftUIAnimations
 //
 //  Created by Yuichi Fujiki on 18/12/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RadarAnimationView: View {
+struct BeaconAnimationView: View {
     @State var scale: CGFloat = 0.5
     @State var opacity: Double = 1.0
 
@@ -29,8 +29,8 @@ struct RadarAnimationView: View {
         })
     }}
 
-struct RadarAnimationView_Previews: PreviewProvider {
+struct BeaconAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        RadarAnimationView()
+        BeaconAnimationView()
     }
 }

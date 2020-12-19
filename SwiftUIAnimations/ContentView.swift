@@ -14,8 +14,8 @@ struct ContentView: View {
                 NavigationLink(destination: BounceAnimationView()) {
                     Text("Bounce")
                 }
-                NavigationLink(destination: RadarAnimationView()) {
-                    Text("Radar")
+                NavigationLink(destination: BeaconAnimationView()) {
+                    Text("Beacon")
                 }
             }
             .padding()
