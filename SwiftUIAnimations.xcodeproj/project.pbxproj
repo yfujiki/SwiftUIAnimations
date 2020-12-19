@@ -15,6 +15,7 @@
 		DB5527E1258CA0DF000E3509 /* SwiftUIAnimationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5527E0258CA0DF000E3509 /* SwiftUIAnimationsUITests.swift */; };
 		DB5527F2258CA274000E3509 /* BounceAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5527F1258CA274000E3509 /* BounceAnimationView.swift */; };
 		DB5527F7258CA2EE000E3509 /* BeaconAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5527F6258CA2EE000E3509 /* BeaconAnimationView.swift */; };
+		DB5527FF258D80A7000E3509 /* FanAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5527FE258D80A7000E3509 /* FanAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DB5527E2258CA0DF000E3509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5527F1258CA274000E3509 /* BounceAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationView.swift; sourceTree = "<group>"; };
 		DB5527F6258CA2EE000E3509 /* BeaconAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconAnimationView.swift; sourceTree = "<group>"; };
+		DB5527FE258D80A7000E3509 /* FanAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DB5527C9258CA0DF000E3509 /* Preview Content */,
 				DB5527F1258CA274000E3509 /* BounceAnimationView.swift */,
 				DB5527F6258CA2EE000E3509 /* BeaconAnimationView.swift */,
+				DB5527FE258D80A7000E3509 /* FanAnimationView.swift */,
 			);
 			path = SwiftUIAnimations;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5527F7258CA2EE000E3509 /* BeaconAnimationView.swift in Sources */,
+				DB5527FF258D80A7000E3509 /* FanAnimationView.swift in Sources */,
 				DB5527F2258CA274000E3509 /* BounceAnimationView.swift in Sources */,
 				DB5527C6258CA0DE000E3509 /* ContentView.swift in Sources */,
 				DB5527C4258CA0DE000E3509 /* SwiftUIAnimationsApp.swift in Sources */,

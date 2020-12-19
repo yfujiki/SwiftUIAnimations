@@ -17,6 +17,9 @@ struct ContentView: View {
                 NavigationLink(destination: BeaconAnimationView()) {
                     Text("Beacon")
                 }
+                NavigationLink(destination: FanAnimationView()) {
+                    Text("Fan")
+                }
             }
             .padding()
             .navigationBarTitle("Animation List")
