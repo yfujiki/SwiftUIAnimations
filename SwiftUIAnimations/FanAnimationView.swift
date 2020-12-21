@@ -25,8 +25,8 @@ struct FanAnimationView: View {
         }
         .rotationEffect(Angle(radians: rotationOffset))
         .onAppear(perform: {
-            withAnimation(Animation.linear(duration: 1.0).repeatForever(autoreverses: false)) {
-                rotationOffset += .pi * 2 / Self.numBlades
+            withAnimation(Animation.linear(duration: 3.0).repeatForever(autoreverses: false)) {
+                rotationOffset += .pi * 2
             }
         })
     }
