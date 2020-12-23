@@ -13,11 +13,11 @@ class GradationAnimationViewModel {
 
 struct GradationAnimationView: View {
     @State var startColor = Color(hue: 0.0, saturation: 1.0, brightness: 1.0)
-    @State var endColor = Color(hue: Self.hueMax, saturation: 1.0, brightness: 1.0)
+    @State var endColor = Color(hue: Self.hueRange, saturation: 1.0, brightness: 1.0)
     @State var viewModel = GradationAnimationViewModel()
 
-    static let animationInterval = 0.05
-    static let hueMax = 0.8
+    static let animationInterval = 0.015
+    static let hueRange = 0.8
 
     var body: some View {
         Rectangle()
@@ -32,13 +32,14 @@ struct GradationAnimationView: View {
     }
 
     func changeColor(colorState: Double) {
-        withAnimation(Animation.linear(duration: Self.animationInterval)) {
-            startColor = Color(hue: colorState, saturation: 1.0, brightness: 1.0)
-            endColor = Color(hue: Self.hueMax - colorState, saturation: 1.0, brightness: 1.0)
-        }
         DispatchQueue.main.asyncAfter(deadline: .now() + Self.animationInterval) {
-            var nextValue = viewModel.animationState + 0.01
-            if nextValue > Self.hueMax {
+            startColor = Color(hue: colorState, saturation: 1.0, brightness: 1.0)
+            var endColorHue = colorState + Self.hueRange
+            endColorHue -= Double(Int(endColorHue))
+            endColor = Color(hue: endColorHue, saturation: 1.0, brightness: 1.0)
+
+            var nextValue = viewModel.animationState + 0.0055
+            if nextValue > 1.0 {
                 nextValue = 0.0
             }
             viewModel.animationState = nextValue
