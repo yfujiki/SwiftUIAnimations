@@ -23,6 +23,9 @@ struct ContentView: View {
                 NavigationLink(destination: GradationAnimationView()) {
                     Text("Gradation")
                 }
+                NavigationLink(destination: LoadingAnimationView()) {
+                    Text("Loading")
+                }
             }
             .padding()
             .navigationBarTitle("Animation List")
