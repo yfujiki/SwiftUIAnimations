@@ -8,7 +8,18 @@
 import SwiftUI
 
 class GradationAnimationViewModel {
+    private var displayLink: CADisplayLink?
     @Published var animationState: Double = 0.0
+
+    func registerForAnimation() {
+        displayLink = CADisplayLink(target: self, selector: #selector(updateAnimationState))
+        displayLink?.add(to: RunLoop.main, forMode: .default)
+    }
+
+    @objc func updateAnimationState() {
+        let newState = animationState + 0.0055
+        animationState = newState - Double(Int(newState))
+    }
 }
 
 struct GradationAnimationView: View {
@@ -24,7 +35,7 @@ struct GradationAnimationView: View {
             .fill(LinearGradient(gradient: Gradient(colors: [startColor, endColor]), startPoint: .topLeading, endPoint: .bottomTrailing))
             .frame(width: 300, height: 300, alignment: .center)
             .onAppear(perform: {
-                changeColor(colorState: viewModel.animationState)
+                viewModel.registerForAnimation()
             })
             .onReceive(viewModel.$animationState, perform: { state in
                 changeColor(colorState: state)
@@ -32,18 +43,10 @@ struct GradationAnimationView: View {
     }
 
     func changeColor(colorState: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.animationInterval) {
-            startColor = Color(hue: colorState, saturation: 1.0, brightness: 1.0)
-            var endColorHue = colorState + Self.hueRange
-            endColorHue -= Double(Int(endColorHue))
-            endColor = Color(hue: endColorHue, saturation: 1.0, brightness: 1.0)
-
-            var nextValue = viewModel.animationState + 0.0055
-            if nextValue > 1.0 {
-                nextValue = 0.0
-            }
-            viewModel.animationState = nextValue
-        }
+        startColor = Color(hue: colorState, saturation: 1.0, brightness: 1.0)
+        var endColorHue = colorState + Self.hueRange
+        endColorHue -= Double(Int(endColorHue))
+        endColor = Color(hue: endColorHue, saturation: 1.0, brightness: 1.0)
     }
 }
 
