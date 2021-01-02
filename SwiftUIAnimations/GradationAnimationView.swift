@@ -13,6 +13,7 @@ class GradationAnimationViewModel {
 
     func registerForAnimation() {
         displayLink = CADisplayLink(target: self, selector: #selector(updateAnimationState))
+        displayLink?.preferredFramesPerSecond = 30
         displayLink?.add(to: RunLoop.main, forMode: .default)
     }
 
